@@ -14,6 +14,6 @@ if [ -z "${FIREBASE_PROJECT}" ]; then
     exit 1
 fi
 
-echo "N" | firebase deploy \
+echo firebase deploy --only functions:server,hosting \
     -m "${GITHUB_REF} (${GITHUB_SHA})" \
     --project ${FIREBASE_PROJECT}
